@@ -21,6 +21,7 @@ services:
       - "25565:25565"
 
     environment:
+      RUN_AS_ROOT: "true"
       TYPE: NEOFORGE
       VERSION: ${MC_VERSION}
       NEOFORGE_VERSION: ${NEOFORGE_VERSION}
@@ -53,9 +54,21 @@ services:
       - ./server/resourcepacks:/data/resourcepacks
       - ./server/datapacks:/data/datapacks
 
-    # Drop all capabilities — a Minecraft server doesn't need any
+    # The itzg image needs SETUID/SETGID to set up the minecraft user.
+    # Drop everything else — a Minecraft server doesn't need real caps.
     cap_drop:
-      - ALL
+      - CHOWN
+      - DAC_OVERRIDE
+      - FSETID
+      - FOWNER
+      - MKNOD
+      - NET_RAW
+      - SETFCAP
+      - SETPCAP
+      - NET_BIND_SERVICE
+      - SYS_CHROOT
+      - KILL
+      - AUDIT_WRITE
 
     # Bump open-file limit: 30+ mods means lots of JARs and region files
     ulimits:
