@@ -105,7 +105,7 @@ pw_install https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise
 pw_install https://www.curseforge.com/minecraft/mc-mods/alexs-mobs-1-21-1-port
 pw_install https://modrinth.com/mod/friends-and-foes-forge
 pw_install https://www.curseforge.com/minecraft/mc-mods/born-in-chaos
-pw_install https://www.curseforge.com/minecraft/mc-mods/l-ender-s-cataclysm
+pw_install https://modrinth.com/mod/l_enders-cataclysm
 pw_install https://www.curseforge.com/minecraft/mc-mods/mowzies-mobs
 pw_install https://www.curseforge.com/minecraft/mc-mods/artifacts
 pw_install https://www.curseforge.com/minecraft/mc-mods/relics-mod
