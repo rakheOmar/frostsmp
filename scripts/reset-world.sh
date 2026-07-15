@@ -58,11 +58,10 @@ if [[ -d "$WORLD_DIR" ]] && [[ -n "$(find "$WORLD_DIR" -mindepth 1 -maxdepth 1 -
   ARCHIVE="${BACKUP_DIR}/pre-reset-${TIMESTAMP}.tar.zst"
   log_info "Backing up current world..."
   run_cmd mkdir -p "$BACKUP_DIR"
-  run_cmd tar -cf - -C "$WORLD_DIR" . | run_cmd zstd -o "$ARCHIVE"
-  if [[ ${PIPESTATUS[0]} -ne 0 ]] || [[ ${PIPESTATUS[1]} -ne 0 ]]; then
+  run_cmd tar -cf - -C "$WORLD_DIR" . | run_cmd zstd -o "$ARCHIVE" || {
     log_error "Backup failed — aborting reset."
     exit 1
-  fi
+  }
   log_info "Backup saved: $ARCHIVE"
 fi
 

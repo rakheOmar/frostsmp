@@ -71,11 +71,10 @@ if [[ -d "$WORLD_DIR" ]] && [[ -n "$(find "$WORLD_DIR" -mindepth 1 -maxdepth 1 -
   PRE_RESTORE="${BACKUP_DIR}/pre-restore-${TIMESTAMP}.tar.zst"
   log_info "Backing up current world before restore..."
   mkdir -p "$BACKUP_DIR"
-  run_cmd tar -cf - -C "$WORLD_DIR" . | run_cmd zstd -o "$PRE_RESTORE"
-  if [[ ${PIPESTATUS[0]} -ne 0 ]] || [[ ${PIPESTATUS[1]} -ne 0 ]]; then
+  run_cmd tar -cf - -C "$WORLD_DIR" . | run_cmd zstd -o "$PRE_RESTORE" || {
     log_error "Pre-restore backup failed."
     exit 1
-  fi
+  }
   log_info "Pre-restore backup saved: $PRE_RESTORE"
 fi
 
@@ -84,11 +83,10 @@ run_cmd rm -rf "$WORLD_DIR"
 run_cmd mkdir -p "$WORLD_DIR"
 
 log_info "Extracting backup: $(basename "$SELECTED")..."
-run_cmd zstd -d -c "$SELECTED" | run_cmd tar -xf - -C "$WORLD_DIR"
-if [[ ${PIPESTATUS[0]} -ne 0 ]] || [[ ${PIPESTATUS[1]} -ne 0 ]]; then
+run_cmd zstd -d -c "$SELECTED" | run_cmd tar -xf - -C "$WORLD_DIR" || {
   log_error "Restore extraction failed."
   exit 1
-fi
+}
 
 log_info "Starting server..."
 run_cmd docker compose start minecraft

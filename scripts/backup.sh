@@ -55,11 +55,10 @@ run_cmd docker compose stop minecraft -t 60
 SERVER_STOPPED=true
 
 log_info "Compressing world directory..."
-run_cmd tar -cf - -C "$WORLD_DIR" . | run_cmd zstd -o "$ARCHIVE"
-if [[ ${PIPESTATUS[0]} -ne 0 ]] || [[ ${PIPESTATUS[1]} -ne 0 ]]; then
+run_cmd tar -cf - -C "$WORLD_DIR" . | run_cmd zstd -o "$ARCHIVE" || {
   log_error "Backup compression failed."
   exit 1
-fi
+}
 
 log_info "Starting server..."
 run_cmd docker compose start minecraft
