@@ -45,6 +45,8 @@ services:
       PVP: ${PVP}
       ENABLE_COMMAND_BLOCK: ${ENABLE_COMMAND_BLOCK}
       MAX_TICK_TIME: ${MAX_TICK_TIME}
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: ${RCON_PASSWORD}
 
     volumes:
       - ./server/world:/data/world
