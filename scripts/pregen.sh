@@ -56,12 +56,12 @@ esac
 
 printf '\nPre-generating %s with radius %s chunks...\n\n' "$DIMENSION" "$RADIUS"
 
-run_cmd docker compose exec minecraft mc-command chunky radius "$RADIUS"
-run_cmd docker compose exec minecraft mc-command chunky dimension "$DIMENSION"
-run_cmd docker compose exec minecraft mc-command chunky start
+run_cmd docker compose exec minecraft rcon-cli chunky radius "$RADIUS"
+run_cmd docker compose exec minecraft rcon-cli chunky dimension "$DIMENSION"
+run_cmd docker compose exec minecraft rcon-cli chunky start
 
 printf '\nChunky pre-generation started.\n'
 printf 'Monitor progress with:\n'
-printf '  docker compose exec minecraft mc-command chunky progress\n\n'
-printf 'To pause:  docker compose exec minecraft mc-command chunky pause\n'
-printf 'To resume: docker compose exec minecraft mc-command chunky continue\n'
+printf '  docker compose exec minecraft rcon-cli chunky progress\n\n'
+printf 'To pause:  docker compose exec minecraft rcon-cli chunky pause\n'
+printf 'To resume: docker compose exec minecraft rcon-cli chunky continue\n'
