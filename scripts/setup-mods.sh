@@ -124,45 +124,37 @@ pw_install https://modrinth.com/datapack/ct-overhaul-village
 printf '\n--- Refreshing index ---\n'
 run_cmd packwiz refresh
 
-printf '\n--- Exporting mods to server/ ---\n'
-TMP_EXPORT="$(mktemp -d)"
-
-# CurseForge export — handles both CF and Modrinth mods in the pack
-if run_cmd packwiz curseforge export -o "$TMP_EXPORT/pack-cf.zip" -y 2>/dev/null; then
-  cd "$TMP_EXPORT"
-  run_cmd unzip -qo pack-cf.zip
-  cd "$PROJECT_ROOT"
-  SRC="$TMP_EXPORT"
-elif run_cmd packwiz modrinth export -o "$TMP_EXPORT/pack-mr.zip" -y 2>/dev/null; then
-  cd "$TMP_EXPORT"
-  run_cmd unzip -qo pack-mr.zip
-  cd "$PROJECT_ROOT"
-  SRC="$TMP_EXPORT"
+printf '\n--- Copying mod jars to server/mods/ ---\n'
+# packwiz stores downloaded JARs alongside their .pw.toml metadata
+run_cmd mkdir -p server/mods
+# Remove stale JARs before copying to avoid orphaned mods
+shopt -s nullglob
+stale_jars=(server/mods/*.jar)
+if [[ ${#stale_jars[@]} -gt 0 ]]; then
+  run_cmd rm -f "${stale_jars[@]}"
+fi
+shopt -u nullglob
+if ls packwiz/mods/*.jar &>/dev/null; then
+  run_cmd cp packwiz/mods/*.jar server/mods/
+  log_info "Mod jars copied from packwiz/mods/ to server/mods/"
 else
-  log_error "packwiz export failed — cannot produce mod jars"
-  run_cmd rm -rf "$TMP_EXPORT"
-  exit 1
+  log_warn "No mod jars found in packwiz/mods/ — trying alternate copy from packwiz cache"
+  # fallback: try to copy from the system packwiz cache
+  PACKWIZ_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/packwiz/cache"
+  if [[ -d "$PACKWIZ_CACHE" ]] && ls "$PACKWIZ_CACHE"/*.jar &>/dev/null; then
+    run_cmd cp "$PACKWIZ_CACHE"/*.jar server/mods/
+    log_info "Mod jars copied from packwiz cache to server/mods/"
+  else
+    log_warn "No mod jars found in packwiz cache either — mods may need to be re-added"
+  fi
 fi
 
-# Exports place mods under overrides/ by convention
-for dir in "$SRC/overrides" "$SRC"; do
-  if [[ -d "$dir/mods" ]] && ls "$dir/mods/"*.jar &>/dev/null; then
-    run_cmd cp "$dir/mods/"*.jar server/mods/
-    log_info "Mod jars copied to server/mods/"
-    break
-  fi
-done
-
-# Datapacks
-for dir in "$SRC/overrides" "$SRC"; do
-  if ls "$dir/"*.zip "$dir/datapacks/"*.zip &>/dev/null 2>&1; then
-    run_cmd cp "$dir/"*.zip "$dir/datapacks/"*.zip server/world/datapacks/ 2>/dev/null || true
-    log_info "Datapacks copied to server/world/datapacks/"
-    break
-  fi
-done
-
-run_cmd rm -rf "$TMP_EXPORT"
+printf '\n--- Copying datapacks ---\n'
+run_cmd mkdir -p server/world/datapacks
+if ls packwiz/datapacks/*.zip &>/dev/null; then
+  run_cmd cp packwiz/datapacks/*.zip server/world/datapacks/
+  log_info "Datapacks copied from packwiz/datapacks/ to server/world/datapacks/"
+fi
 
 printf '\n=== Mod setup complete ===\n'
 printf '\nRestart the server:\n'
