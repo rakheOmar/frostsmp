@@ -110,6 +110,8 @@ pw_install https://www.curseforge.com/minecraft/mc-mods/mowzies-mobs
 pw_install https://www.curseforge.com/minecraft/mc-mods/artifacts
 pw_install https://www.curseforge.com/minecraft/mc-mods/relics-mod
 
+pw_install https://modrinth.com/mod/chunky           # World pre-generation
+
 printf '\n--- Adding datapacks ---\n\n'
 
 # Modrinth datapacks are added the same way — packwiz detects the project type
