@@ -51,7 +51,7 @@ mkdir -p "$BACKUP_DIR"
 echo "=== FrostSMP Backup ==="
 
 log_info "Stopping server to lock world writes..."
-run_cmd docker compose stop minecraft --time 60
+run_cmd docker compose stop minecraft -t 60
 SERVER_STOPPED=true
 
 log_info "Compressing world directory..."

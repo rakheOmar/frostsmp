@@ -124,23 +124,41 @@ run_cmd packwiz refresh
 
 printf '\n--- Exporting mods to server/ ---\n'
 TMP_EXPORT="$(mktemp -d)"
-run_cmd packwiz curseforge export -o "$TMP_EXPORT/pack-export.zip" -y
-cd "$TMP_EXPORT"
-run_cmd unzip -q pack-export.zip
-cd "$PROJECT_ROOT"
 
-if [[ -d "$TMP_EXPORT/mods" ]]; then
-  run_cmd cp "$TMP_EXPORT/mods/"*.jar server/mods/ 2>/dev/null || log_warn "No mod jars to copy"
-  log_info "Mod jars copied to server/mods/"
+# CurseForge export — handles both CF and Modrinth mods in the pack
+if run_cmd packwiz curseforge export -o "$TMP_EXPORT/pack-cf.zip" -y 2>/dev/null; then
+  cd "$TMP_EXPORT"
+  run_cmd unzip -qo pack-cf.zip
+  cd "$PROJECT_ROOT"
+  SRC="$TMP_EXPORT"
+elif run_cmd packwiz modrinth export -o "$TMP_EXPORT/pack-mr.zip" -y 2>/dev/null; then
+  cd "$TMP_EXPORT"
+  run_cmd unzip -qo pack-mr.zip
+  cd "$PROJECT_ROOT"
+  SRC="$TMP_EXPORT"
+else
+  log_error "packwiz export failed — cannot produce mod jars"
+  run_cmd rm -rf "$TMP_EXPORT"
+  exit 1
 fi
 
-# Datapacks from Modrinth: the .pw.toml files are in datapacks/ but the actual
-# ZIPs may be in the export under various locations. Try common paths.
-if [[ -f "$TMP_EXPORT/datapacks/"*.zip ]]; then
-  run_cmd cp "$TMP_EXPORT/datapacks/"*.zip server/world/datapacks/ 2>/dev/null || true
-elif [[ -f "$TMP_EXPORT/overrides/datapacks/"*.zip ]]; then
-  run_cmd cp "$TMP_EXPORT/overrides/datapacks/"*.zip server/world/datapacks/ 2>/dev/null || true
-fi
+# Exports place mods under overrides/ by convention
+for dir in "$SRC/overrides" "$SRC"; do
+  if [[ -d "$dir/mods" ]] && ls "$dir/mods/"*.jar &>/dev/null; then
+    run_cmd cp "$dir/mods/"*.jar server/mods/
+    log_info "Mod jars copied to server/mods/"
+    break
+  fi
+done
+
+# Datapacks
+for dir in "$SRC/overrides" "$SRC"; do
+  if ls "$dir/"*.zip "$dir/datapacks/"*.zip &>/dev/null 2>&1; then
+    run_cmd cp "$dir/"*.zip "$dir/datapacks/"*.zip server/world/datapacks/ 2>/dev/null || true
+    log_info "Datapacks copied to server/world/datapacks/"
+    break
+  fi
+done
 
 run_cmd rm -rf "$TMP_EXPORT"
 

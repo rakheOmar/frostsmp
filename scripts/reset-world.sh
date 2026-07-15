@@ -51,7 +51,7 @@ if [[ "$CONFIRM" != "yes" ]]; then
 fi
 
 log_info "Stopping server..."
-run_cmd docker compose stop minecraft --time 60
+run_cmd docker compose stop minecraft -t 60
 SERVER_STOPPED=true
 
 if [[ -d "$WORLD_DIR" ]] && [[ -n "$(find "$WORLD_DIR" -mindepth 1 -maxdepth 1 -print -quit 2>/dev/null)" ]]; then
