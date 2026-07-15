@@ -35,13 +35,36 @@ run_cmd packwiz refresh
 cd "$PROJECT_ROOT"
 
 log_info "Exporting mods to server/mods/..."
+TMP_EXPORT="$(mktemp -d)"
 export_ok=0
-run_cmd packwiz curseforge export --output server/mods/ 2>/dev/null && export_ok=1
-if [[ $export_ok -eq 0 ]]; then
-  run_cmd packwiz modrinth export --output server/mods/ 2>/dev/null && export_ok=1
+
+if run_cmd packwiz curseforge export -o "$TMP_EXPORT/pack-export.zip" -y 2>/dev/null; then
+  cd "$TMP_EXPORT"
+  run_cmd unzip -q pack-export.zip
+  cd "$PROJECT_ROOT"
+  export_ok=1
 fi
+
 if [[ $export_ok -eq 0 ]]; then
-  if [[ -d server/mods ]] && ls server/mods/*.jar &>/dev/null; then
+  if run_cmd packwiz modrinth export -o "$TMP_EXPORT/pack-export.mrpack" -y 2>/dev/null; then
+    cd "$TMP_EXPORT"
+    run_cmd unzip -q pack-export.mrpack
+    cd "$PROJECT_ROOT"
+    export_ok=1
+  fi
+fi
+
+if [[ $export_ok -eq 1 ]]; then
+  if [[ -d "$TMP_EXPORT/mods" ]]; then
+    run_cmd cp "$TMP_EXPORT/mods/"*.jar server/mods/ 2>/dev/null || true
+  fi
+  if [[ -d "$TMP_EXPORT/overrides/mods" ]]; then
+    run_cmd cp "$TMP_EXPORT/overrides/mods/"*.jar server/mods/ 2>/dev/null || true
+  fi
+  log_info "Mod jars updated in server/mods/"
+  run_cmd rm -rf "$TMP_EXPORT"
+else
+  if ls server/mods/*.jar &>/dev/null 2>&1; then
     log_warn "packwiz export failed, but mod jars already exist — continuing"
   else
     log_warn "packwiz export failed and no mod jars found — update may be incomplete"
