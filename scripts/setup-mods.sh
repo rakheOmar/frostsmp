@@ -98,7 +98,7 @@ pw_install https://modrinth.com/mod/mouse-tweaks
 # --- Library deps (needed before the mods that require them) ---
 pw_install https://modrinth.com/mod/moonlight          # Supplementaries
 pw_install https://modrinth.com/mod/curios             # Relics
-pw_install https://www.curseforge.com/minecraft/mc-mods/octo-lib  # Relics
+pw_install https://modrinth.com/mod/octo-lib  # Relics
 
 pw_install https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise
 # Unofficial 1.21.1 port — original Alex's Mobs stopped at 1.20.1
