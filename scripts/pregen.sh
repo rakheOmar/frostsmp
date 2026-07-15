@@ -56,8 +56,18 @@ esac
 
 printf '\nPre-generating %s with radius %s chunks...\n\n' "$DIMENSION" "$RADIUS"
 
-run_cmd docker compose exec minecraft rcon-cli chunky radius "$RADIUS"
-run_cmd docker compose exec minecraft rcon-cli chunky dimension "$DIMENSION"
+# Convert chunk radius to block radius (Chunky uses blocks)
+BLOCK_RADIUS=$((RADIUS * 16))
+
+# Map dimension name to server world folder name
+case "$DIMENSION" in
+  overworld) WORLD_NAME="${LEVEL_NAME:-world}" ;;
+  nether)    WORLD_NAME="${LEVEL_NAME:-world}_nether" ;;
+  end)       WORLD_NAME="${LEVEL_NAME:-world}_the_end" ;;
+esac
+
+run_cmd docker compose exec minecraft rcon-cli chunky world "$WORLD_NAME"
+run_cmd docker compose exec minecraft rcon-cli chunky radius "$BLOCK_RADIUS"
 run_cmd docker compose exec minecraft rcon-cli chunky start
 
 printf '\nChunky pre-generation started.\n'

@@ -125,7 +125,6 @@ printf '\n--- Refreshing index ---\n'
 run_cmd packwiz refresh
 
 printf '\n--- Copying mod jars to server/mods/ ---\n'
-# packwiz stores downloaded JARs alongside their .pw.toml metadata
 run_cmd mkdir -p server/mods
 # Remove stale JARs before copying to avoid orphaned mods
 shopt -s nullglob
@@ -134,19 +133,22 @@ if [[ ${#stale_jars[@]} -gt 0 ]]; then
   run_cmd rm -f "${stale_jars[@]}"
 fi
 shopt -u nullglob
-if ls packwiz/mods/*.jar &>/dev/null; then
-  run_cmd cp packwiz/mods/*.jar server/mods/
-  log_info "Mod jars copied from packwiz/mods/ to server/mods/"
-else
-  log_warn "No mod jars found in packwiz/mods/ — trying alternate copy from packwiz cache"
-  # fallback: try to copy from the system packwiz cache
-  PACKWIZ_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/packwiz/cache"
-  if [[ -d "$PACKWIZ_CACHE" ]] && ls "$PACKWIZ_CACHE"/*.jar &>/dev/null; then
-    run_cmd cp "$PACKWIZ_CACHE"/*.jar server/mods/
-    log_info "Mod jars copied from packwiz cache to server/mods/"
-  else
-    log_warn "No mod jars found in packwiz cache either — mods may need to be re-added"
+
+# Find JARs from wherever packwiz stored them — pack dir or system cache
+copied=0
+for src in packwiz/mods/ "${XDG_CACHE_HOME:-$HOME/.cache}/packwiz/cache/"; do
+  if [[ -d "$src" ]]; then
+    while IFS= read -r -d '' jar; do
+      run_cmd cp "$jar" server/mods/
+      copied=$((copied + 1))
+    done < <(find "$src" -maxdepth 1 -name '*.jar' -print0 2>/dev/null)
   fi
+done
+
+if [[ $copied -gt 0 ]]; then
+  log_info "Copied $copied mod jars to server/mods/"
+else
+  log_warn "No mod jars found — mods may need to be installed first"
 fi
 
 printf '\n--- Copying datapacks ---\n'
