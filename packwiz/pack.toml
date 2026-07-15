@@ -1,11 +1,12 @@
-pack-format = "packwiz:1.1.0"
 name = "FrostSMP"
 author = "Frost SMP Team"
 version = "1.0.0"
+pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
+hash = "b65234d59452fc609144eee6909cffbb0dd7e4cc9aed9949e2da4260d771cca4"
 
 [versions]
 minecraft = "1.21.1"
