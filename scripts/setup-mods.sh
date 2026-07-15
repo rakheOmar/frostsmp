@@ -25,11 +25,22 @@ pw_install() {
   local url="$1"
   local slug
   slug="$(basename "$url")"
+
+  # Remove trailing slash from slug if present
+  slug="${slug%/}"
+  # For CurseForge URLs, the slug is the last path component
+  # For Modrinth URLs, also the last path component
+
   if [[ -f "mods/${slug}.pw.toml" ]] || [[ -f "datapacks/${slug}.pw.toml" ]]; then
     log_info "Skipping — already added: $slug"
     return 0
   fi
-  run_cmd packwiz mr install "$url" -y
+
+  if [[ "$url" == *"curseforge.com"* ]]; then
+    run_cmd packwiz cf install "$url" -y
+  else
+    run_cmd packwiz mr install "$url" -y
+  fi
 }
 
 printf '=== FrostSMP Mod Setup ===\n'
