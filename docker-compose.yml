@@ -1,0 +1,88 @@
+services:
+  minecraft:
+    # Pinned to a specific Java major version rather than :latest
+    # for reproducible builds. Bump the tag deliberately.
+    image: itzg/minecraft-server:java21
+    container_name: frostsmp
+    restart: unless-stopped
+
+    # Keep 2 GB headroom for the OS on an 8 GB machine —
+    # bump this down if the i3-4130 swap-thrashes.
+    mem_limit: 6G
+
+    # Give the server time to flush chunks before Docker SIGKILLs it
+    stop_grace_period: 120s
+
+    # Allows "docker attach frostsmp" for interactive console
+    stdin_open: true
+    tty: true
+
+    ports:
+      - "25565:25565"
+
+    environment:
+      TYPE: NEOFORGE
+      VERSION: ${MC_VERSION}
+      NEOFORGE_VERSION: ${NEOFORGE_VERSION}
+      LEVEL: ${LEVEL_NAME}
+      SEED: ${LEVEL_SEED}
+      DIFFICULTY: ${DIFFICULTY}
+      MODE: ${GAMEMODE}
+      MEMORY: ${MEMORY}
+      MAX_PLAYERS: ${MAX_PLAYERS}
+      VIEW_DISTANCE: ${VIEW_DISTANCE}
+      SIMULATION_DISTANCE: ${SIMULATION_DISTANCE}
+      MOTD: ${MOTD}
+      EULA: "TRUE"
+      ONLINE_MODE: ${ONLINE_MODE}
+      WHITELIST: ${WHITELIST}
+      OPS: ${OPS}
+      JVM_OPTS: ${JVM_OPTS}
+      OVERRIDE_SERVER_PROPERTIES: "TRUE"
+      ENFORCE_WHITELIST: "TRUE"
+      SPAWN_PROTECTION: ${SPAWN_PROTECTION}
+      PVP: ${PVP}
+      ENABLE_COMMAND_BLOCK: ${ENABLE_COMMAND_BLOCK}
+      MAX_TICK_TIME: ${MAX_TICK_TIME}
+
+    volumes:
+      - ./server/world:/data/world
+      - ./server/config:/data/config
+      - ./server/logs:/data/logs
+      - ./server/mods:/data/mods
+      - ./server/resourcepacks:/data/resourcepacks
+      - ./server/datapacks:/data/datapacks
+
+    # Drop all capabilities — a Minecraft server doesn't need any
+    cap_drop:
+      - ALL
+
+    # Bump open-file limit: 30+ mods means lots of JARs and region files
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+
+    healthcheck:
+      test: mc-healthcheck
+      start_period: 120s
+      interval: 30s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: 3
+
+  playit:
+    image: ghcr.io/playit-cloud/playit-agent:latest
+    container_name: frostsmp-tunnel
+    restart: unless-stopped
+    depends_on:
+      minecraft:
+        condition: service_healthy
+    environment:
+      SECRET_KEY: ${PLAYIT_SECRET_KEY:-}
+    volumes:
+      - ./playit:/config

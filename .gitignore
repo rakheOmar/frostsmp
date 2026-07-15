@@ -1,0 +1,10 @@
+.env
+guides/
+server/world/
+server/logs/
+server/mods/*.jar
+server/mods/*.disabled
+backups/
+dist/
+.agents/
+skills-lock.json

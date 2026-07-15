@@ -1,0 +1,14 @@
+name = "FrostSMP"
+author = "Frost SMP Team"
+version = "1.0.0"
+minecraft = "1.21.1"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+
+[versions]
+neoforge = "21.1.146"
+
+[options]
+acceptable-game-versions = ["1.21.1"]
