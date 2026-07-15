@@ -134,9 +134,9 @@ if [[ ${#stale_jars[@]} -gt 0 ]]; then
 fi
 shopt -u nullglob
 
-# Find JARs from wherever packwiz stored them — pack dir or system cache
+# Find JARs from wherever packwiz stored them
 copied=0
-for src in packwiz/mods/ "${XDG_CACHE_HOME:-$HOME/.cache}/packwiz/cache/"; do
+for src in mods/ packwiz/mods/ "${XDG_CACHE_HOME:-$HOME/.cache}/packwiz/cache/"; do
   if [[ -d "$src" ]]; then
     while IFS= read -r -d '' jar; do
       run_cmd cp "$jar" server/mods/
