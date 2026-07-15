@@ -64,8 +64,8 @@ printf '\n--- Adding mods ---\n\n'
 
 pw_install https://modrinth.com/mod/ferrite-core
 pw_install https://modrinth.com/mod/modernfix
-pw_install https://modrinth.com/mod/memoryleakfix
-pw_install https://modrinth.com/mod/fastload
+# memoryleakfix removed — Fabric-only, no NeoForge version (ModernFix covers this)
+# fastload removed — only up to 1.20.1, and it's client-side only
 pw_install https://modrinth.com/mod/embeddium
 pw_install https://modrinth.com/mod/immediatelyfast
 pw_install https://modrinth.com/mod/entityculling
