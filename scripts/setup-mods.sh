@@ -31,22 +31,24 @@ fi
 
 cd "$PACKWIZ_DIR"
 
-if [[ -d mods ]] && ls mods/*.pw.toml &>/dev/null 2>&1; then
-  log_info "Existing .pw.toml files found — refreshing and updating"
-  packwiz refresh
-  packwiz update --all
-  log_info "Mod update complete"
-  exit 0
-fi
-
 MOD_COUNT=$(jq length "$MODS_JSON")
-log_info "Installing $MOD_COUNT mods from $MODS_JSON"
+log_info "Processing $MOD_COUNT mods from $MODS_JSON"
+
+INSTALLED=0
+SKIPPED=0
+FAILED=0
 
 for i in $(seq 0 $((MOD_COUNT - 1))); do
   SOURCE=$(jq -r ".[$i].source" "$MODS_JSON")
   SLUG=$(jq -r ".[$i].slug" "$MODS_JSON")
   OPTIONAL=$(jq -r ".[$i].optional // false" "$MODS_JSON")
   NAME=$(jq -r ".[$i].name" "$MODS_JSON")
+
+  if [[ -f "mods/${SLUG}.pw.toml" ]]; then
+    log_info "[$((i + 1))/$MOD_COUNT] Skipping $NAME — already installed"
+    SKIPPED=$((SKIPPED + 1))
+    continue
+  fi
 
   if [[ "$OPTIONAL" == "true" ]]; then
     log_warn "OPTIONAL: $NAME ($SLUG) — installing may fail if unavailable"
@@ -55,14 +57,25 @@ for i in $(seq 0 $((MOD_COUNT - 1))); do
   case "$SOURCE" in
     modrinth)
       log_info "[$((i + 1))/$MOD_COUNT] Installing $NAME (modrinth: $SLUG)"
-      packwiz mr install "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done
+      if packwiz mr install "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done; then
+        INSTALLED=$((INSTALLED + 1))
+      else
+        log_warn "Failed to install $NAME — continuing"
+        FAILED=$((FAILED + 1))
+      fi
       ;;
     curseforge)
       log_info "[$((i + 1))/$MOD_COUNT] Installing $NAME (curseforge: $SLUG)"
-      packwiz cf install "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done
+      if packwiz cf install "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done; then
+        INSTALLED=$((INSTALLED + 1))
+      else
+        log_warn "Failed to install $NAME — continuing"
+        FAILED=$((FAILED + 1))
+      fi
       ;;
     *)
       log_warn "Unknown source '$SOURCE' for $SLUG — skipping"
+      FAILED=$((FAILED + 1))
       ;;
   esac
 done
@@ -70,4 +83,4 @@ done
 log_info "Regenerating packwiz index"
 packwiz refresh
 
-log_info "Mod setup complete"
+log_info "Done: $INSTALLED installed, $SKIPPED already present, $FAILED failed"
