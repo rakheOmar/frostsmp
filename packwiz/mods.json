@@ -95,19 +95,9 @@
     "slug": "combat-roll"
   },
   {
-    "name": "Simply Swords",
-    "source": "modrinth",
-    "slug": "simply-swords"
-  },
-  {
     "name": "L Ender's Cataclysm",
     "source": "modrinth",
     "slug": "l_enders-cataclysm"
-  },
-  {
-    "name": "Mowzie's Mobs",
-    "source": "curseforge",
-    "slug": "mowzies-mobs"
   },
   {
     "name": "Born in Chaos",
@@ -133,11 +123,6 @@
     "name": "Relics",
     "source": "curseforge",
     "slug": "relics-mod"
-  },
-  {
-    "name": "Iron's Spells n Spellbooks",
-    "source": "modrinth",
-    "slug": "irons-spells-n-spellbooks"
   },
   {
     "name": "Waystones",
