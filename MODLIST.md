@@ -40,6 +40,7 @@
 | Libraries | Placebo | https://modrinth.com/mod/placebo |
 | Libraries | Patchouli | https://modrinth.com/mod/patchouli |
 | Libraries | Apothic Attributes | https://modrinth.com/mod/apothic-attributes |
+| Libraries | Lithostitched | https://modrinth.com/mod/lithostitched |
 | RPG | Apotheosis | https://modrinth.com/mod/apotheosis |
 | RPG | Apothic Enchanting | https://modrinth.com/mod/apothic-enchanting |
 | RPG | Apothic Spawners | https://modrinth.com/mod/apothic-spawners |
