@@ -45,7 +45,7 @@ services:
       ROLLING_LOG_MAX_FILES: "30"
 
     volumes:
-      - ./packwiz:/data/packwiz:ro
+      - ./packwiz:/data/packwiz
       - ./server/config:/data/config
       - ./server/world:/data/world
       - ./server/logs:/data/logs
