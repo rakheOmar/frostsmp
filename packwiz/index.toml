@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "mods.json"
-hash = "6a8d6b25719a61d5157765900f75c8c8af7d84d0f6034fef2571fc4ad263e7d5"
+hash = "c748477c715782191f3d936d84831d6b3b613524cde2e482154f06662c4a5dd8"
 
 [[files]]
 file = "mods/alexs-mobs-1-21-1-port.pw.toml"
@@ -115,11 +115,6 @@ hash = "6b6683fd8ec53d10d4fbef3b3d53922a1aaa8ef4d2e4b52bb819dc451f5d6b3d"
 metafile = true
 
 [[files]]
-file = "mods/embeddium.pw.toml"
-hash = "b97475005918623befe0ca7a6d44e4a21d30d2e0c9c1718d7f5e9ad7c8059cc7"
-metafile = true
-
-[[files]]
 file = "mods/emi.pw.toml"
 hash = "514624ff938fa34da4fc2d5d6a033cdaedd6ffa9f49b3418b17d554e8d2398ae"
 metafile = true
@@ -167,11 +162,6 @@ metafile = true
 [[files]]
 file = "mods/handcrafted.pw.toml"
 hash = "e7c5f1a035caf72ba1344124fc54c10f9f0b5822bb690b241063cb69af7c46a8"
-metafile = true
-
-[[files]]
-file = "mods/immediatelyfast.pw.toml"
-hash = "94af73eec28b59b314b2c6ef9dfb98f37d7bbcbcb482c278570cc15e44b6a559"
 metafile = true
 
 [[files]]

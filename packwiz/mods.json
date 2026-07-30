@@ -5,16 +5,6 @@
         "slug": "ferrite-core"
     },
     {
-        "name": "Embeddium",
-        "source": "modrinth",
-        "slug": "embeddium"
-    },
-    {
-        "name": "ImmediatelyFast",
-        "source": "modrinth",
-        "slug": "immediatelyfast"
-    },
-    {
         "name": "Entity Culling",
         "source": "modrinth",
         "slug": "entityculling"
