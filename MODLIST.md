@@ -32,9 +32,25 @@
 | Libraries | Curios API | https://modrinth.com/mod/curios |
 | Libraries | GeckoLib | https://modrinth.com/mod/geckolib |
 | Libraries | ShatterByte Lib (OctoLib) | https://modrinth.com/mod/shatterbyte-lib |
+| Libraries | Placebo | https://modrinth.com/mod/placebo |
+| Libraries | Patchouli | https://modrinth.com/mod/patchouli |
+| Libraries | Apothic Attributes | https://modrinth.com/mod/apothic-attributes |
+| RPG | Apotheosis | https://modrinth.com/mod/apotheosis |
+| RPG | Apothic Spawners | https://modrinth.com/mod/apothic-spawners |
 | Utility | Xaero's Minimap | https://modrinth.com/mod/xaeros-minimap |
 | Utility | Xaero's World Map | https://modrinth.com/mod/xaeros-world-map |
 | Mining | FTB Ultimine | https://www.curseforge.com/minecraft/mc-mods/ftb-ultimine-forge |
+| Structures | YUNG's API | https://modrinth.com/mod/yungs-api |
+| Structures | YUNG's Better Dungeons | https://modrinth.com/mod/yungs-better-dungeons |
+| Structures | YUNG's Better Mineshafts | https://modrinth.com/mod/yungs-better-mineshafts |
+| Structures | YUNG's Better Strongholds | https://modrinth.com/mod/yungs-better-strongholds |
+| Structures | YUNG's Better Ocean Monuments | https://modrinth.com/mod/yungs-better-ocean-monuments |
+| Structures | YUNG's Better Nether Fortresses | https://modrinth.com/mod/yungs-better-nether-fortresses |
+| Structures | YUNG's Better Desert Temples | https://modrinth.com/mod/yungs-better-desert-temples |
+| Structures | YUNG's Better Jungle Temples | https://modrinth.com/mod/yungs-better-jungle-temples |
+| Structures | YUNG's Better Witch Huts | https://modrinth.com/mod/yungs-better-witch-huts |
+| Structures | YUNG's Better End Island | https://modrinth.com/mod/yungs-better-end-island |
+| Structures | YUNG's Bridges | https://modrinth.com/mod/yungs-bridges |
 | Structures | When Dungeons Arise | https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise |
 
 ## Datapacks
@@ -47,4 +63,4 @@
 | CT Overhaul Village | https://modrinth.com/datapack/ct-overhaul-village |
 
 ## Auto-resolved Library Dependencies
-Architectury API, Balm, Citadel, Cloth Config API, FTB Library, Lionfish-API, playerAnimator, Resourceful Lib
+Architectury API, Balm, Citadel, Cloth Config API, FTB Library, Lionfish-API, Placebo, playerAnimator, Resourceful Lib
