@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "mods.json"
-hash = "82cf53c6e5ff9d5f87f47abb22ce89467c456b9498b5be724b88d2d1cd267e40"
+hash = "6a8d6b25719a61d5157765900f75c8c8af7d84d0f6034fef2571fc4ad263e7d5"
 
 [[files]]
 file = "mods/alexs-mobs-1-21-1-port.pw.toml"
