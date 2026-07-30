@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "mods.json"
-hash = "c748477c715782191f3d936d84831d6b3b613524cde2e482154f06662c4a5dd8"
+hash = "b59b92274280f2adc83640d52ac545aabf9b2555d2dec03b932e3dc0e516d5d0"
 
 [[files]]
 file = "mods/alexs-mobs-1-21-1-port.pw.toml"
@@ -172,11 +172,6 @@ metafile = true
 [[files]]
 file = "mods/l_enders-cataclysm.pw.toml"
 hash = "1adf24c4207f2e7c99be3b5d4aaef206fbc3725441c14e1f7ea77d2648fc10ee"
-metafile = true
-
-[[files]]
-file = "mods/lambdynamiclights.pw.toml"
-hash = "b85d562b35f68cdbb0f79bbdebc11cb938002c727d9f982ed5743c8488c74ac7"
 metafile = true
 
 [[files]]

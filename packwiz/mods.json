@@ -195,11 +195,6 @@
         "slug": "ftb-ultimine-forge"
     },
     {
-        "name": "Dynamic Lights",
-        "source": "modrinth",
-        "slug": "lambdynamiclights"
-    },
-    {
         "name": "Moonlight",
         "source": "modrinth",
         "slug": "moonlight"
