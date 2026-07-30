@@ -3,11 +3,11 @@ filename = "Apotheosis-1.21.1-8.6.1.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/rqFWfVlz/versions/sLyTVplu/Apotheosis-1.21.1-8.6.1.jar"
-hash-format = "sha512"
-hash = "b07e68cdee9529aac5e232e2b4a696aa01e4e25895ea3277c2ed991e29342657e9a594e308b6e1e5d5834f27fd531b755cc4476738012f3096fccd06863414bc"
+hash-format = "sha1"
+hash = "7a639e58c820069ec1d8a3431c38b58511d24dc1"
+mode = "metadata:curseforge"
 
 [update]
-[update.modrinth]
-mod-id = "rqFWfVlz"
-version = "sLyTVplu"
+[update.curseforge]
+file-id = 8525273
+project-id = 313970

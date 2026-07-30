@@ -1,0 +1,13 @@
+name = "Iron's Apothic Invaders"
+filename = "irons_apothic_invaders_1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/1veFBGT4/versions/JoyvwffA/irons_apothic_invaders_1.0.0.jar"
+hash-format = "sha512"
+hash = "6896becf09749e8916211b3fbee96f03b89066283ed26cf2930d928d21c1c37069aaca692e00a7b439c3c47aef05a7cc872ce27568cec9ed71fbc10198fd4cb0"
+
+[update]
+[update.modrinth]
+mod-id = "1veFBGT4"
+version = "JoyvwffA"
