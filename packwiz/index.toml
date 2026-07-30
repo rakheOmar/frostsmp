@@ -101,17 +101,12 @@ metafile = true
 
 [[files]]
 file = "mods/controlling.pw.toml"
-hash = "dfb782c56e1a9c8afca6969ae1fb1ffdf670d18606b9e4f625a6e632a03f9582"
+hash = "65c8086d2ec3d39acc7bd36c7a0306ccc43b602b38fa07d13291bc478ef7dfff"
 metafile = true
 
 [[files]]
 file = "mods/corpse.pw.toml"
 hash = "8e671fbd3a5460a61073cced391ec08efc6b67d765e49015eea45a1f1db159a0"
-metafile = true
-
-[[files]]
-file = "mods/curios-continuation.pw.toml"
-hash = "832e2a2cf0002200c97d0456649a3a78ec5a29b4ba01b7c2d8b7a8a95c65d4ba"
 metafile = true
 
 [[files]]
@@ -252,21 +247,6 @@ metafile = true
 [[files]]
 file = "mods/shatterbyte-lib.pw.toml"
 hash = "709cb3e42d0de51e604870dd4a0a670d9c899c8366c7590d16e2c7ab0c9064d9"
-metafile = true
-
-[[files]]
-file = "mods/sophisticated-backpacks.pw.toml"
-hash = "4e28e41307883797d2a6fbc2ae6cd9d75d5356ed0874d4f7f4ee8a1a75dba9e0"
-metafile = true
-
-[[files]]
-file = "mods/sophisticated-core.pw.toml"
-hash = "75392c81b7738b6330aefa622e0962eb1a0b99c562990316fbee47be420992ef"
-metafile = true
-
-[[files]]
-file = "mods/sophisticated-storage.pw.toml"
-hash = "54d8e3cb2804b7a5b8e21b5040e2cecb733d51d61304b486c2fbade30a094299"
 metafile = true
 
 [[files]]
