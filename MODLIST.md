@@ -47,6 +47,7 @@
 | Utility | Xaero's Minimap | https://modrinth.com/mod/xaeros-minimap |
 | Utility | Xaero's World Map | https://modrinth.com/mod/xaeros-world-map |
 | Mining | FTB Ultimine | https://www.curseforge.com/minecraft/mc-mods/ftb-ultimine-forge |
+| Server | Skin Restorer | https://modrinth.com/mod/skin-restorer |
 | Structures | YUNG's API | https://modrinth.com/mod/yungs-api |
 | Structures | YUNG's Better Dungeons | https://modrinth.com/mod/yungs-better-dungeons |
 | Structures | YUNG's Better Mineshafts | https://modrinth.com/mod/yungs-better-mineshafts |
