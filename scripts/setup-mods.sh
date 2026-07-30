@@ -31,6 +31,9 @@ fi
 
 cd "$PACKWIZ_DIR"
 
+log_info "Setting acceptable Minecraft versions"
+packwiz settings acceptable-versions --add 1.21.1
+
 MOD_COUNT=$(jq length "$MODS_JSON")
 log_info "Processing $MOD_COUNT mods from $MODS_JSON"
 
@@ -57,7 +60,7 @@ for i in $(seq 0 $((MOD_COUNT - 1))); do
   case "$SOURCE" in
     modrinth)
       log_info "[$((i + 1))/$MOD_COUNT] Installing $NAME (modrinth: $SLUG)"
-      if packwiz mr install "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done; then
+      if packwiz mr install -y "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done; then
         INSTALLED=$((INSTALLED + 1))
       else
         log_warn "Failed to install $NAME — continuing"
@@ -66,7 +69,7 @@ for i in $(seq 0 $((MOD_COUNT - 1))); do
       ;;
     curseforge)
       log_info "[$((i + 1))/$MOD_COUNT] Installing $NAME (curseforge: $SLUG)"
-      if packwiz cf install "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done; then
+      if packwiz cf install -y "$SLUG" 2>&1 | while IFS= read -r line; do log_info "$line"; done; then
         INSTALLED=$((INSTALLED + 1))
       else
         log_warn "Failed to install $NAME — continuing"
