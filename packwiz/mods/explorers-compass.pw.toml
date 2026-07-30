@@ -1,0 +1,13 @@
+name = "Explorer's Compass"
+filename = "ExplorersCompass-1.21-3.0.2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/RV1qfVQ8/versions/sMc2HTnr/ExplorersCompass-1.21-3.0.2-neoforge.jar"
+hash-format = "sha512"
+hash = "b947e2dca101b14028b91aea7c8f2ef0956195f63fa67dc514acf17ccecf51f0b1c2499ed8f5137d6f2a7971474ab760a586853c7e375df8901622a3e2d37eb8"
+
+[update]
+[update.modrinth]
+mod-id = "RV1qfVQ8"
+version = "sMc2HTnr"

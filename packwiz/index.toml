@@ -180,11 +180,6 @@ hash = "94af73eec28b59b314b2c6ef9dfb98f37d7bbcbcb482c278570cc15e44b6a559"
 metafile = true
 
 [[files]]
-file = "mods/irons-spells-n-spellbooks.pw.toml"
-hash = "bd14409bb94cab897e765d8d2912d34984c1f4985989051a486985ff28974dd7"
-metafile = true
-
-[[files]]
 file = "mods/jade.pw.toml"
 hash = "df0ef2fde18a80800daa54e10c448bf70d95687c79ebf5e0b63babee94b631d7"
 metafile = true
@@ -220,11 +215,6 @@ hash = "6bc414cc0f2d4c078fe83f384d786343f701f371d657c5279b5b0df1595804bd"
 metafile = true
 
 [[files]]
-file = "mods/mowzies-mobs.pw.toml"
-hash = "ef5e19ba6a664e7d2b3d54723e3d3f05c0d9e987d807ecb899c1c2ba1a509519"
-metafile = true
-
-[[files]]
 file = "mods/natures-compass.pw.toml"
 hash = "698d2dd98eae3d37c9f9eb3b99944623a06e8577d4afa1a85c1e44554d7355a5"
 metafile = true
@@ -252,6 +242,11 @@ metafile = true
 [[files]]
 file = "mods/resourceful-lib.pw.toml"
 hash = "c0b066684294c33972d562e0cb08ea17b2d31bcf86cd1d6c63b8e968f0eac7a2"
+metafile = true
+
+[[files]]
+file = "mods/searchables.pw.toml"
+hash = "ce9ddada6ffd55a512149cc474c6a453281a997a5fdf1b7b4a2cc73f875e704a"
 metafile = true
 
 [[files]]

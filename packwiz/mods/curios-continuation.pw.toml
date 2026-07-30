@@ -1,0 +1,13 @@
+name = "Curios API Continuation [Frozen]"
+filename = "curios-neoforge-9.0.11+1.21.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cf17c1b6f3eee7c4ac69df914d769d3321b8b31b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5747224
+project-id = 1037991
