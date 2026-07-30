@@ -11,6 +11,9 @@
 | Performance | Chunky | https://modrinth.com/mod/chunky |
 | Combat | Better Combat | https://modrinth.com/mod/better-combat |
 | Combat | Combat Roll | https://modrinth.com/mod/combat-roll |
+| Magic | Iron's Spells 'n Spellbooks | https://modrinth.com/mod/irons-spells-n-spellbooks |
+| Magic | Iron's Apothic (Apotheosis compat) | https://www.curseforge.com/minecraft/mc-mods/apotheosis-x-irons-spellbooks-compat |
+| Magic | Iron's Apothic Invaders | https://modrinth.com/mod/irons-apothic |
 | Bosses | L Ender's Cataclysm | https://modrinth.com/mod/l_enders-cataclysm |
 | Bosses | Born in Chaos | https://www.curseforge.com/minecraft/mc-mods/born-in-chaos |
 | Creatures | Alex's Mobs | https://www.curseforge.com/minecraft/mc-mods/alexs-mobs-1-21-1-port |
@@ -18,6 +21,8 @@
 | Creatures | Friends and Foes | https://modrinth.com/mod/friends-and-foes-forge |
 | Loot | Artifacts | https://www.curseforge.com/minecraft/mc-mods/artifacts |
 | Loot | Relics | https://www.curseforge.com/minecraft/mc-mods/relics-mod |
+| Storage | Sophisticated Backpacks | https://modrinth.com/mod/sophisticated-backpacks |
+| Storage | Sophisticated Storage | https://modrinth.com/mod/sophisticated-storage |
 | Exploration | Waystones | https://modrinth.com/mod/waystones |
 | Exploration | Nature's Compass | https://modrinth.com/mod/natures-compass |
 | Exploration | Explorer's Compass | https://modrinth.com/mod/explorers-compass |
@@ -51,6 +56,10 @@
 | Structures | YUNG's Better Witch Huts | https://modrinth.com/mod/yungs-better-witch-huts |
 | Structures | YUNG's Better End Island | https://modrinth.com/mod/yungs-better-end-island |
 | Structures | YUNG's Bridges | https://modrinth.com/mod/yungs-bridges |
+| Decoration | Chipped | https://modrinth.com/mod/chipped |
+| Decoration | Handcrafted | https://modrinth.com/mod/handcrafted |
+| QoL | Controlling | https://modrinth.com/mod/controlling |
+| QoL | Better Advancements | https://modrinth.com/mod/better-advancements |
 | Structures | When Dungeons Arise | https://www.curseforge.com/minecraft/mc-mods/when-dungeons-arise |
 
 ## Datapacks
@@ -63,4 +72,4 @@
 | CT Overhaul Village | https://modrinth.com/datapack/ct-overhaul-village |
 
 ## Auto-resolved Library Dependencies
-Architectury API, Balm, Citadel, Cloth Config API, FTB Library, Lionfish-API, Placebo, playerAnimator, Resourceful Lib
+Architectury API, Athena, Balm, Citadel, Cloth Config API, FTB Library, Iron's Lib, Lionfish-API, Placebo, playerAnimator, Resourceful Lib, Searchables, Sophisticated Core
