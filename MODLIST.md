@@ -41,6 +41,7 @@
 | Libraries | Patchouli | https://modrinth.com/mod/patchouli |
 | Libraries | Apothic Attributes | https://modrinth.com/mod/apothic-attributes |
 | RPG | Apotheosis | https://modrinth.com/mod/apotheosis |
+| RPG | Apothic Enchanting | https://modrinth.com/mod/apothic-enchanting |
 | RPG | Apothic Spawners | https://modrinth.com/mod/apothic-spawners |
 | Utility | Xaero's Minimap | https://modrinth.com/mod/xaeros-minimap |
 | Utility | Xaero's World Map | https://modrinth.com/mod/xaeros-world-map |
