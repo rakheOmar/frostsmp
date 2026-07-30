@@ -32,7 +32,7 @@ fi
 cd "$PACKWIZ_DIR"
 
 log_info "Setting acceptable Minecraft versions"
-packwiz settings acceptable-versions --add 1.21.1
+packwiz settings acceptable-versions --add 1.21.1 || true
 
 MOD_COUNT=$(jq length "$MODS_JSON")
 log_info "Processing $MOD_COUNT mods from $MODS_JSON"
