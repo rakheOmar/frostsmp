@@ -1,13 +1,13 @@
 name = "FerriteCore"
-filename = "ferritecore-7.0.0-neoforge.jar"
+filename = "ferritecore-7.0.3-neoforge.jar"
 side = "both"
 
 [download]
-url = "https://cdn.modrinth.com/data/uXXizFIs/versions/BkJB5PPB/ferritecore-7.0.0-neoforge.jar"
+url = "https://cdn.modrinth.com/data/uXXizFIs/versions/x7kQWVju/ferritecore-7.0.3-neoforge.jar"
 hash-format = "sha512"
-hash = "590e4bf3641c8531fc7a03e84046c912f6b7ee4bd229ec77038d3b9a0cf039c707b500e8dda826a1f383166b8b6cd2c5c5859b61af88b25221d20432abbc36ab"
+hash = "19af89a2075bb10a63884fa853ebf84b02c79dc3242430ecdad056fd764fdcde367a7303276b329df01b0736e2ef264c5d80c7dc92c6aebd244f556a230bb417"
 
 [update]
 [update.modrinth]
 mod-id = "uXXizFIs"
-version = "BkJB5PPB"
+version = "x7kQWVju"

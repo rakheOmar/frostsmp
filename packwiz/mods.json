@@ -1,233 +1,128 @@
 [
     {
-        "name": "Ferrite Core",
-        "source": "modrinth",
-        "slug": "ferrite-core"
+        "name": "Alex's Mobs (Unofficial Port)"
     },
     {
-        "name": "Entity Culling",
-        "source": "modrinth",
-        "slug": "entityculling"
+        "name": "AppleSkin"
     },
     {
-        "name": "Chunky",
-        "source": "modrinth",
-        "slug": "chunky"
+        "name": "Architectury API"
     },
     {
-        "name": "YUNG's Better Dungeons",
-        "source": "modrinth",
-        "slug": "yungs-better-dungeons"
+        "name": "Artifacts"
     },
     {
-        "name": "YUNG's Better Strongholds",
-        "source": "modrinth",
-        "slug": "yungs-better-strongholds"
+        "name": "Balm"
     },
     {
-        "name": "YUNG's Better Mineshafts",
-        "source": "modrinth",
-        "slug": "yungs-better-mineshafts"
+        "name": "Better Combat"
     },
     {
-        "name": "YUNG's Better Desert Temples",
-        "source": "modrinth",
-        "slug": "yungs-better-desert-temples"
+        "name": "Born in Chaos"
     },
     {
-        "name": "YUNG's Better Jungle Temples",
-        "source": "modrinth",
-        "slug": "yungs-better-jungle-temples"
+        "name": "ChoiceTheorem's Overhauled Village"
     },
     {
-        "name": "YUNG's Better Ocean Monuments",
-        "source": "modrinth",
-        "slug": "yungs-better-ocean-monuments"
+        "name": "Chunky"
     },
     {
-        "name": "YUNG's Better Witch Huts",
-        "source": "modrinth",
-        "slug": "yungs-better-witch-huts"
+        "name": "Citadel (Unofficial Port)"
     },
     {
-        "name": "YUNG's Better Nether Fortresses",
-        "source": "modrinth",
-        "slug": "yungs-better-nether-fortresses"
+        "name": "Cloth Config API"
     },
     {
-        "name": "YUNG's Better End Island",
-        "source": "modrinth",
-        "slug": "yungs-better-end-island"
+        "name": "Combat Roll"
     },
     {
-        "name": "YUNG's Bridges",
-        "source": "modrinth",
-        "slug": "yungs-bridges"
+        "name": "Corpse"
     },
     {
-        "name": "When Dungeons Arise",
-        "source": "curseforge",
-        "slug": "when-dungeons-arise"
+        "name": "Curios API"
     },
     {
-        "name": "Better Combat",
-        "source": "modrinth",
-        "slug": "better-combat"
+        "name": "Dungeons and Taverns"
     },
     {
-        "name": "Combat Roll",
-        "source": "modrinth",
-        "slug": "combat-roll"
+        "name": "Embeddium"
     },
     {
-        "name": "L Ender's Cataclysm",
-        "source": "modrinth",
-        "slug": "l_enders-cataclysm"
+        "name": "EMI"
     },
     {
-        "name": "Born in Chaos",
-        "source": "curseforge",
-        "slug": "born-in-chaos"
+        "name": "Entity Culling"
     },
     {
-        "name": "Alex's Mobs",
-        "source": "curseforge",
-        "slug": "alexs-mobs-1-21-1-port"
+        "name": "Explorer's Compass"
     },
     {
-        "name": "Friends and Foes",
-        "source": "modrinth",
-        "slug": "friends-and-foes-forge"
+        "name": "Farmer's Delight"
     },
     {
-        "name": "Artifacts",
-        "source": "curseforge",
-        "slug": "artifacts"
+        "name": "FerriteCore"
     },
     {
-        "name": "Relics",
-        "source": "curseforge",
-        "slug": "relics-mod"
+        "name": "Friends&Foes (Forge/NeoForge)"
     },
     {
-        "name": "Waystones",
-        "source": "modrinth",
-        "slug": "waystones"
+        "name": "GeckoLib"
     },
     {
-        "name": "Nature's Compass",
-        "source": "modrinth",
-        "slug": "natures-compass"
+        "name": "ImmediatelyFast"
     },
     {
-        "name": "Explorer's Compass",
-        "source": "modrinth",
-        "slug": "explorers-compass"
+        "name": "Incendium Legacy"
     },
     {
-        "name": "Farmer's Delight",
-        "source": "modrinth",
-        "slug": "farmers-delight"
+        "name": "Jade \ud83d\udd0d"
     },
     {
-        "name": "Supplementaries",
-        "source": "modrinth",
-        "slug": "supplementaries"
+        "name": "L_Ender's Cataclysm"
     },
     {
-        "name": "Chipped",
-        "source": "modrinth",
-        "slug": "chipped"
+        "name": "Lionfish-API"
     },
     {
-        "name": "Handcrafted",
-        "source": "modrinth",
-        "slug": "handcrafted"
+        "name": "ModernFix"
     },
     {
-        "name": "emi",
-        "source": "modrinth",
-        "slug": "emi"
+        "name": "Moonlight Lib"
     },
     {
-        "name": "Jade",
-        "source": "modrinth",
-        "slug": "jade"
+        "name": "Mouse Tweaks"
     },
     {
-        "name": "AppleSkin",
-        "source": "modrinth",
-        "slug": "appleskin"
+        "name": "Mowzie's Mobs"
     },
     {
-        "name": "Corpse",
-        "source": "modrinth",
-        "slug": "corpse"
+        "name": "Nature's Compass"
     },
     {
-        "name": "Mouse Tweaks",
-        "source": "modrinth",
-        "slug": "mouse-tweaks"
+        "name": "Nullscape"
     },
     {
-        "name": "Better Advancements",
-        "source": "modrinth",
-        "slug": "better-advancements"
+        "name": "playerAnimator"
     },
     {
-        "name": "Controlling",
-        "source": "modrinth",
-        "slug": "controlling"
+        "name": "Relics"
     },
     {
-        "name": "Xaero's Minimap",
-        "source": "modrinth",
-        "slug": "xaeros-minimap"
+        "name": "Resourceful Lib"
     },
     {
-        "name": "Xaero's World Map",
-        "source": "modrinth",
-        "slug": "xaeros-world-map"
+        "name": "ShatterLib | OctoLib"
     },
     {
-        "name": "FTB Ultimine",
-        "source": "curseforge",
-        "slug": "ftb-ultimine-forge"
+        "name": "Supplementaries"
     },
     {
-        "name": "Moonlight",
-        "source": "modrinth",
-        "slug": "moonlight"
+        "name": "Terralith"
     },
     {
-        "name": "Curios API",
-        "source": "modrinth",
-        "slug": "curios"
+        "name": "Waystones"
     },
     {
-        "name": "GeckoLib",
-        "source": "modrinth",
-        "slug": "geckolib"
-    },
-    {
-        "name": "Balm",
-        "source": "modrinth",
-        "slug": "balm"
-    },
-    {
-        "name": "Collective",
-        "source": "modrinth",
-        "slug": "collective"
-    },
-    {
-        "name": "ShatterByte Lib",
-        "source": "modrinth",
-        "slug": "shatterbyte-lib"
-    },
-    {
-        "name": "Apotheosis",
-        "source": "modrinth",
-        "slug": "apotheosis",
-        "optional": true
+        "name": "When Dungeons Arise - Forge!"
     }
 ]
