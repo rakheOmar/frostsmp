@@ -88,6 +88,7 @@ services:
     image: ghcr.io/playit-cloud/playit-agent:latest
     container_name: frostsmp-tunnel
     restart: unless-stopped
+    network_mode: host
     depends_on:
       minecraft:
         condition: service_healthy
