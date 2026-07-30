@@ -195,11 +195,6 @@ hash = "64acab1580ca6edd8b1dd185e914aeee7aa551a88a7cd7f0f9370a82aaadfef6"
 metafile = true
 
 [[files]]
-file = "mods/modernfix.pw.toml"
-hash = "0a386e56ac0d43e424eafbda33f177025805bd85b00f7545c4190451d187c51f"
-metafile = true
-
-[[files]]
 file = "mods/moonlight.pw.toml"
 hash = "91cfdcee62cc8ef6f6269562b3da00f06a9789a5169765b5175c4d34c17d16dc"
 metafile = true
