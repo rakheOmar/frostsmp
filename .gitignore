@@ -1,0 +1,17 @@
+# Environment
+.env
+
+# Runtime data
+server/world/
+server/logs/
+server/mods/
+
+# Tunnel config
+playit/config/
+
+# Backups
+backups/
+
+# Pack exports
+*.zip
+*.mrpack

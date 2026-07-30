@@ -1,0 +1,2 @@
+# Disable line-ending conversion so packwiz hashes don't break on Windows
+* -text

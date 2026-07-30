@@ -1,0 +1,97 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:java21
+    container_name: frostsmp
+    restart: unless-stopped
+    mem_limit: 6G
+    stop_grace_period: 120s
+    stdin_open: true
+    tty: true
+
+    ports:
+      - "25565:25565"
+
+    environment:
+      RUN_AS_ROOT: ${RUN_AS_ROOT}
+      TYPE: NEOFORGE
+      VERSION: ${MC_VERSION}
+      NEOFORGE_VERSION: ${NEOFORGE_VERSION}
+      LEVEL: ${LEVEL_NAME}
+      SEED: ${LEVEL_SEED}
+      DIFFICULTY: ${DIFFICULTY}
+      MODE: ${GAMEMODE}
+      MEMORY: ${MEMORY}
+      MAX_PLAYERS: ${MAX_PLAYERS}
+      VIEW_DISTANCE: ${VIEW_DISTANCE}
+      SIMULATION_DISTANCE: ${SIMULATION_DISTANCE}
+      MOTD: ${MOTD}
+      EULA: "TRUE"
+      ONLINE_MODE: ${ONLINE_MODE}
+      WHITELIST: ${WHITELIST}
+      OPS: ${OPS}
+      JVM_OPTS: ${JVM_OPTS}
+      OVERRIDE_SERVER_PROPERTIES: "TRUE"
+      ENFORCE_WHITELIST: "TRUE"
+      SPAWN_PROTECTION: ${SPAWN_PROTECTION}
+      PVP: ${PVP}
+      ENABLE_COMMAND_BLOCK: ${ENABLE_COMMAND_BLOCK}
+      MAX_TICK_TIME: ${MAX_TICK_TIME}
+      ENABLE_RCON: ${ENABLE_RCON}
+      RCON_PASSWORD: ${RCON_PASSWORD}
+      PACKWIZ_URL: file:///data/packwiz/pack.toml
+
+      # Logging — templated log4j2 with rolling archives, capped at 30 files
+      GENERATE_LOG4J2_CONFIG: "true"
+      ROLLING_LOG_MAX_FILES: "30"
+
+    volumes:
+      - ./packwiz:/data/packwiz:ro
+      - ./server/config:/data/config
+      - ./server/world:/data/world
+      - ./server/logs:/data/logs
+      - ./server/mods:/data/mods
+      - ./resourcepacks:/data/resourcepacks
+      - ./datapacks:/data/datapacks
+
+    cap_drop:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FSETID
+      - FOWNER
+      - MKNOD
+      - NET_RAW
+      - SETFCAP
+      - SETPCAP
+      - NET_BIND_SERVICE
+      - SYS_CHROOT
+      - KILL
+      - AUDIT_WRITE
+
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+
+    healthcheck:
+      test: mc-health
+      start_period: 120s
+      interval: 30s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: 3
+
+  playit:
+    image: ghcr.io/playit-cloud/playit-agent:latest
+    container_name: frostsmp-tunnel
+    restart: unless-stopped
+    depends_on:
+      minecraft:
+        condition: service_healthy
+    environment:
+      SECRET_KEY: ${PLAYIT_SECRET_KEY:-}
+    volumes:
+      - ./playit:/config
