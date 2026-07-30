@@ -25,6 +25,11 @@ hash = "5fbeebfba16e5480242c5e0db97a9167289500e53bc0df1a0a872c0e62f55de8"
 metafile = true
 
 [[files]]
+file = "mods/apothic-enchanting.pw.toml"
+hash = "1c5cbffb4e5dc40c83437c37ed6be96d8a4f152053e9bb01681b867ab326ce38"
+metafile = true
+
+[[files]]
 file = "mods/apothic-spawners.pw.toml"
 hash = "781fe924f8038f4b54d326b6d90104e56b4639e6d7439ea361165c8d22c97113"
 metafile = true
