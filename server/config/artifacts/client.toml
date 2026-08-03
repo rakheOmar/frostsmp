@@ -3,9 +3,12 @@
 #Negative values place the element left of the hotbar
 #Range: -2147483648 ~ 2147483647
 cooldownOverlayOffset = 10
-#Display artifacts on cooldown next to the hotbar
+#Whether artifacts on cooldown should be displayed next to the hotbar
 #Allowed Values: true, false
-enableCooldownOverlay = false
+enableCooldownOverlay = true
+#Controls the vertical position of the Helium Flamingo's charge meter
+#Range: -2147483648 ~ 2147483647
+heliumFlamingoOverlayOffset = 0
 #Whether models for gloves are shown in first person
 #Allowed Values: true, false
 showFirstPersonGloves = true

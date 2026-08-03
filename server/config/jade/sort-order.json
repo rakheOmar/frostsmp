@@ -1,5 +1,6 @@
 {
   "apotheosis:adventure": null,
+  "apothic_enchanting:raven_stats": null,
   "apothic_spawners:spawner": null,
   "corpse:corpse": null,
   "jade:object_name": null,
@@ -14,6 +15,7 @@
   "minecraft:fluid_storage": null,
   "minecraft:fluid_storage.default": null,
   "minecraft:furnace": null,
+  "minecraft:hopper_lock": null,
   "minecraft:item_storage": null,
   "minecraft:item_storage.default": null,
   "minecraft:jukebox": null,

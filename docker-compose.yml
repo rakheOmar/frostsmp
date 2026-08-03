@@ -39,6 +39,7 @@ services:
       ENABLE_RCON: ${ENABLE_RCON}
       RCON_PASSWORD: ${RCON_PASSWORD}
       PACKWIZ_URL: file:///data/packwiz/pack.toml
+      SYNC_CHUNK_WRITES: ${SYNC_CHUNK_WRITES:-true}
 
       # Logging — templated log4j2 with rolling archives, capped at 30 files
       GENERATE_LOG4J2_CONFIG: "true"
